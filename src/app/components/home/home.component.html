@@ -1,0 +1,41 @@
+<app-header [navbarlinks]='logout'></app-header>
+<div class="container">
+    <div class="col"></div>
+    <div class="row mt-5 tasks-model justify-content-center" style="align-items: center; justify-content: center; margin-left:200px;">
+        <div class="col-md-6 bg-white shadow">
+            <div class="card text-white mt-3" style="background-color: #3f51b5;">
+                    <h2 class="text-center pt-2">To Do Tasks</h2>
+            </div>
+            <div class="shadow">
+                <div class="input-group p-3">
+                    <input type="text" class="form-control" placeholder="Add Tasks" [(ngModel)]="this.toDoObj.task" name="task">
+                    <button class="btn btn-outline-success" type="button" (click)="addTask()" *ngIf="addBtn">Add</button>
+                    <button class="btn btn-outline-success" type="button" (click)="updateTask()" *ngIf="updateBtn">Update</button>
+                </div>
+            </div>
+           
+            <h3 class="text-primary mt-5 fw-bold ms-3">Tasks:</h3>
+            <table style="border: 1px solid black;" class="justify-content-center ms-3 mb-5">
+                <thead>
+                    <tr style="border: 1px solid black;">
+                        <th style="border: 1px solid black; padding: 10px; text-align: center; width: 190px;">Tasks</th>
+                        <th style="border: 1px solid black; padding: 10px; text-align: center; width: 190px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of taskData" style="border: 1px solid black;">
+                        <td style="border: 1px solid black; padding: 20px; ">{{data.task}}</td>
+                        <td>
+                            <span matTooltip="Delete" class="material-icons" style="color: red; cursor: pointer; padding-left: 50px;" (click)="deleteTask(data.id)">delete</span>
+                            <span class="material-icons" style="cursor: pointer; padding-left: 10px; padding-right: 20px;" (click)="updateData(data)">edit</span>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        
+    </div>
+    <div class="col"></div>
+
+   
+</div>

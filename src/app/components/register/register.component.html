@@ -1,0 +1,45 @@
+<app-header [navbarlinks]="LogIn"></app-header>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form [formGroup]="signUpform" (ngSubmit)="signUp(signUpform.value)" class="register-form">
+                <h1>SignUp Form</h1>
+                <div>
+                     <mat-form-field appearance="outline">
+                         <mat-label>Enter First Name</mat-label>
+                         <input type="text" formControlName="FirstName" matInput placeholder="Enter first Name">
+                     </mat-form-field>
+                </div>
+                <div>
+                     <mat-form-field appearance="outline">
+                     <mat-label>Enter Last Name</mat-label>
+                     <input type="text" formControlName="LastName" matInput placeholder="Enter last name">
+                     </mat-form-field>
+                </div>
+                <div>
+                     <mat-form-field appearance="outline">
+                     <mat-label>Enter Profession</mat-label>
+                     <input type="text" formControlName="Profession" matInput placeholder="Ex : Student/Teacher etc.">
+                     </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                    <mat-label>UserName</mat-label>
+                    <input type="text" formControlName="UserName" matInput placeholder="Enter Username" >
+                    </mat-form-field>
+               </div>
+               <div>
+                <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input  type="password" formControlName="Password" matInput placeholder="Enter password">
+                </mat-form-field>
+           </div>
+                <div>
+                  <button class="btn" style="background-color: #3f51b5; color: white;">SignUp</button>
+                </div>
+             
+             </form>
+        </div>
+    </div>
+</div>
+

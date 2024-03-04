@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"> <mat-icon>menu</mat-icon></button>
+    <span>ToDo Tasks App</span>
+    <span class="example-spacer"></span>
+    <span *ngIf="navbarlinks[0].loginpage">
+       <button [matMenuTriggerFor]="menu" mat-raised-button>Login/SignUp</button>
+         <mat-menu #menu="matMenu">
+            <a routerLink="/"><button mat-menu-item>Login</button></a>
+            <a routerLink="/register"><button mat-menu-item>SignUp</button></a>
+           </mat-menu>
+     </span>
+     <span *ngIf="navbarlinks[0].homepage">
+        <button class="btn" mat-raised-button (click)="Logout()">Logout</button>
+   </span>
+</mat-toolbar>
